@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support Site: Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    #quicklinks img,
+    #licences img {
+      padding: 0.75rem 0.75rem 0 0.75rem;
+    }
+
+    #status .card {
+      border-radius: 0;
+    }
+
+    a.text-decoration-none.text-reset:hover > .card {
+    transform: translateY(-5px);
+    }
+
+    .card {
+    transition: transform 0.3s ease-in-out; 
+    }
+
+    @media (max-width: 991px) {
+    a.text-decoration-none.text-reset:hover > .card {
+      transform: none;
+    }
+    }
+
+    .savings-and-atoz-cards {
+      width: 95%;
+      max-width: 800px;
+      margin: auto;
+      padding: 15px;
+      border-radius: 25px;
+    }
+
+    .savings-and-atoz-cards-img {
+      width: 250px;
+      height: 250px;
+      flex-shrink: 0;
+    }
+
+    .savings-card-content {
+      transform: translateX(-40px);
+    }
+
+    .atoz-card-content {
+      transform: translateX(40px);
+    }
+
+    @media (max-width: 991px) {
+
+      .savings-card-content,
+      .atoz-card-content {
+        transform: none;
+        text-align: center;
+      }
+    }
+
+    .nav-link,
+    .nav-link:focus {
+      color: white;
+    }
+
+    .nav-link:hover {
+      color: rgb(213, 44, 44);
+    }
+
+    .form-select:focus, .accordion-button:focus {
+    border-color: rgb(213, 140, 140);
+    outline: 0;
+    box-shadow: 0 0 0 .15rem rgba(213, 140, 140, .25);
+    }
+
+    .accordion-button:not(.collapsed) {
+    background-color: #fafafa;
+    color:unset;
+    }
+
+    .accordion-button::after {
+      margin-right:1rem;
+    }
+
+    :root {
+    --bs-dark-bg-subtle: #dadada; 
+    }
+
+    .list-group-item-dark {
+    --bs-list-group-color: #000;
+    }
+
+    .list-group {
+      font-weight:500
+    }
+
+    @media (max-width: 991px) {
+
+    #statuscards 
+    {
+         text-align: center;
+    }
+    }
+
+    .coming-soon-overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    cursor: not-allowed;
+  }
+  .position-relative:hover .coming-soon-overlay {
+    opacity: 1;
+  }
+
+  a.no-hover:hover > .card {
+  transform: none !important; 
+}
+
+  </style>
+</head>
+
+<nav class="navbar navbar-expand bg-dark d-sm-block" style="border-bottom: rgba(72, 72, 72, 1) 2px solid">
+  <div class="container-fluid">
+    <a class="navbar-brand mx-auto ms-md-0" href="/secure/default.aspx">
+      <img src="images/lgfl-logo-small.png" alt="LGfL Logo" style="width:140px;">
+    </a>
+    <div class="w-100 justify-content-center d-none d-lg-flex" id="navbarText">
+      <ul class="navbar-nav mb-0" style="font-family: Arial">
+        <li class="nav-item">
+          <a class="nav-link" href="https://lgfl.net/smartbuy/connectivity" target="_blank">Connectivity</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://lgfl.net/security" target="_blank">Cybersecurity</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://lgfl.net/safeguarding" target="_blank">Safeguarding</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://lgfl.net/educators" target="_blank">Teaching</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.lgfl.net/training" target="_blank">Training</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://lgfl.net/home/about-us" target="_blank">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/secure/guide/WebGuide/Help.html">User Guide</a>
+        </li>
+      </ul>
+    </div>
+    <img class="mx-auto me-md-0" src="images/supercloud.png" alt="LGfL Logo" style="height:65px;">
+  </div>
+</nav>
+
+
+<body style="background-image: linear-gradient(to bottom right, #fff, #f9f9f9);">
+  <div style="max-width: 100%; overflow-x: auto;">
+    <img src="images/supportsitenav.png" alt="Logo"
+      class="d-block mx-auto mt-2">
+  </div>
+  <div class="pt-3 mx-3">
+    <!-- Dropdowns visible on medium screens and up -->
+    <div class="row mx-auto d-none d-md-flex" style="max-width: 1500px;">
+      <div class="col-md-4 col-lg-3 mb-3">
+        <label for="dropdown1" class="form-label">Authority/Group</label>
+        <select class="form-select" id="dropdown1" name="authority">
+          <option selected>LGfL Trust</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </div>
+      <div class="col-md-4 col-lg-3 mb-3">
+        <label for="dropdown2" class="form-label">Establishment</label>
+        <select class="form-select" id="dropdown2" name="establishment">
+          <option selected>London Grid for Learning</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </div>
+      <div class="col-md-4 col-lg-3 mb-3">
+        <label for="dropdown3" class="form-label">Site</label>
+        <select class="form-select" id="dropdown3" name="site">
+          <option selected>Site B</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Offcanvas for mobile -->
+    <div class="offcanvas offcanvas-start d-md-none" tabindex="-1" id="filterOffcanvas">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Change Establishment</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="mb-3">
+          <label for="dropdown1Mobile" class="form-label">Authority/Group</label>
+          <select class="form-select" id="dropdown1Mobile" name="authority">
+            <option selected>LGfL Trust</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="dropdown2Mobile" class="form-label">Establishment</label>
+          <select class="form-select" id="dropdown2Mobile" name="establishment">
+            <option selected>London Grid for Learning</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="dropdown3Mobile" class="form-label">Site</label>
+          <select class="form-select" id="dropdown3Mobile" name="site">
+            <option selected>Site B</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mx-auto" style="max-width: 1500px;">
+      <div class="col-12 col-lg-7 col-xl-8" id="quicklinks">
+        <h5>Quick Links</h5>
+      
+
+        <div class="row row-cols-3 g-3 text-center mb-3">
+          <div class="col">
+            <a href="https://lgfl.net/about/licences" class="text-decoration-none text-reset" target="_blank">
+              <div class="card shadow-sm h-100" style="background-color:#fafafa;">
+                <div class="card-body d-flex align-items-center justify-content-center p-2">
+                  <h6 class="mb-0">Claim Free LGfL Premium Resources</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="https://members.lgfl.net/savings-calculator" class="text-decoration-none text-reset" target="_blank">
+              <div class="card shadow-sm h-100" style="background-color: #fafafa;">
+                <div class="card-body d-flex align-items-center justify-content-center p-2">
+                  <h6 class="mb-0">LGfL Savings and Benefits Tracker</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="https://lgfl.net/services/all-services" class="text-decoration-none text-reset" target="_blank">
+              <div class="card shadow-sm h-100" style="background-color: #fafafa;">
+                <div class="card-body d-flex align-items-center justify-content-center p-2">
+                  <h6 class="mb-0">Explore LGfL A to Z of Services</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          </div>
+
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-xl-4 g-3 text-center">
+          <div class="col">
+            <a href="/secure/support/support_raise.aspx" class="text-decoration-none text-reset">
+              <div class="card shadow-sm h-100">
+                <img src="images/supportcase.webp" class="card-img-top img-fluid" alt="...">
+                <div class="card-body d-flex align-items-center justify-content-center">
+                  <h6 class="mb-0">Log a Support Case</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="https://lgfl.net/smartbuy" class="text-decoration-none text-reset" target="_blank">
+              <div class="card shadow-sm h-100">
+                <img src="images/buyfromlgfl2.webp" class="card-img-top img-fluid" alt="...">
+                <div class="card-body d-flex align-items-center justify-content-center">
+                  <h6 class="mb-0">Buy From LGfL</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="https://helpdesk.lgfl.net/support/tickets/new?product=Escalation%20to%20LGfL" class="text-decoration-none text-reset" target="_blank">
+              <div class="card shadow-sm h-100">
+                <img src="images/escalatetolgfl.webp" class="card-img-top img-fluid" alt="...">
+                <div class="card-body d-flex align-items-center justify-content-center">
+                  <h6 class="mb-0">Escalate to LGfL</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="/secure/user/ncreq/manage_nc.aspx" class="text-decoration-none text-reset">
+              <div class="card shadow-sm h-100">
+                <img src="images/nominatedcontacts.webp" class="card-img-top img-fluid" alt="...">
+                <div class="card-body d-flex align-items-center justify-content-center">
+                  <h6 class="mb-0">Review LGfL School and Nominated Contacts</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <div class="position-relative h-100">
+              <a href="#" class="text-decoration-none text-reset no-hover">
+                <div class="card shadow-sm h-100">
+                  <img src="images/cloudservices.webp" class="card-img-top img-fluid" alt="...">
+                  <div class="card-body d-flex align-items-center justify-content-center">
+                    <h6 class="mb-0">Engage LGfL CloudSquad</h6>
+                  </div>
+                </div>
+              </a>
+              <div class="coming-soon-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                <span class="text-white bg-dark px-3 py-1 rounded">Coming Soon</span>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <a href="https://schoolprotect.lgfl.org.uk/secure/account/signin?type=Shibboleth&returnUrl=/secure/home" class="text-decoration-none text-reset" target="_blank">
+              <div class="card shadow-sm h-100">
+                <img src="images/webfiltering.webp" class="card-img-top img-fluid" alt="...">
+                <div class="card-body d-flex align-items-center justify-content-center">
+                  <h6 class="mb-0">Manage SchoolProtect Filtering</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="https://webadmin.safehomeschool.net/webadmin/start" class="text-decoration-none text-reset" target="_blank">
+              <div class="card shadow-sm h-100">
+                <img src="images/homeprotect.webp" class="card-img-top img-fluid" alt="...">
+                <div class="card-body d-flex align-items-center justify-content-center">
+                  <h6 class="mb-0">Manage HomeProtect Filtering</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="https://schoolprotect.lgfl.org.uk/secure/account/signin?type=Shibboleth&returnUrl=/secure/report/dashboard" class="text-decoration-none text-reset" target="_blank">
+              <div class="card shadow-sm h-100">
+                <img src="images/internetuse.webp" class="card-img-top img-fluid" alt="...">
+                <div class="card-body d-flex align-items-center justify-content-center">
+                  <h6 class="mb-0">View Filtering MOT</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="https://lgfl.net/security/cyberprotect" class="text-decoration-none text-reset" target="_blank">
+              <div class="card shadow-sm h-100">
+                <img src="images/internalvul.webp" class="card-img-top img-fluid" alt="...">
+                <div class="card-body d-flex align-items-center justify-content-center">
+                  <h6 class="mb-0">Request Internal Vulnerability Scan</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="https://lgfl.net/security/security-school-report" class="text-decoration-none text-reset" target="_blank">
+              <div class="card shadow-sm h-100">
+                <img src="images/externalvul.webp" class="card-img-top img-fluid" alt="...">
+                <div class="card-body d-flex align-items-center justify-content-center">
+                  <h6 class="mb-0">Request External Security Report</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="/secure/myacc/lgfl/lgfl2_deploy.aspx?tab=4" class="text-decoration-none text-reset">
+              <div class="card shadow-sm h-100">
+                <img src="images/firewall.webp" class="card-img-top img-fluid" alt="...">
+                <div class="card-body d-flex align-items-center justify-content-center">
+                  <h6 class="mb-0">View Firewall & Mail Relay Rules </h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <div class="position-relative h-100">
+              <a href="#" class="text-decoration-none text-reset no-hover">
+                <div class="card shadow-sm h-100">
+                  <img src="images/firewallrules.png" class="card-img-top img-fluid" alt="...">
+                  <div class="card-body d-flex align-items-center justify-content-center">
+                    <h6 class="mb-0">Update Firewall Rules</h6>
+                  </div>
+                </div>
+              </a>
+              <div class="coming-soon-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                <span class="text-white bg-dark px-3 py-1 rounded">Coming Soon</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col">
+            <a href="https://www.lgfl.net" class="text-decoration-none text-reset" target="_blank">
+              <div class="card shadow-sm h-100">
+                <img src="images/firewallmot.webp" class="card-img-top img-fluid" alt="...">
+                <div class="card-body d-flex align-items-center justify-content-center">
+                  <h6 class="mb-0">Request Firewall MOT</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+         
+          <div class="col">
+            <a href="/secure/myacc/lgfl/lgfl2_deploy.aspx?tab=4" class="text-decoration-none text-reset">
+              <div class="card shadow-sm h-100">
+                <img src="images/ipaddresses.webp" class="card-img-top img-fluid" alt="...">
+                <div class="card-body d-flex align-items-center justify-content-center">
+                  <h6 class="mb-0">View IP Addresses</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="/secure/support/dns.aspx" class="text-decoration-none text-reset">
+              <div class="card shadow-sm h-100">
+                <img src="images/dns.webp" class="card-img-top img-fluid" alt="...">
+                <div class="card-body d-flex align-items-center justify-content-center">
+                  <h6 class="mb-0">Review DNS Records</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="/secure/user/au/pwd_policies.aspx" class="text-decoration-none text-reset">
+              <div class="card shadow-sm h-100">
+                <img src="images/password.webp" class="card-img-top img-fluid" alt="...">
+                <div class="card-body d-flex align-items-center justify-content-center">
+                  <h6 class="mb-0">Adjust Password Policies</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="/secure/email/lgfl/mailadmin.aspx" class="text-decoration-none text-reset">
+              <div class="card shadow-sm h-100">
+                <img src="images/staffmail.webp" class="card-img-top img-fluid" alt="...">
+                <div class="card-body d-flex align-items-center justify-content-center">
+                  <h6 class="mb-0">Review StaffMail Accounts</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <div class="position-relative h-100">
+              <a href="#" class="text-decoration-none text-reset no-hover">
+                <div class="card shadow-sm h-100">
+                  <img src="images/coffeeandcatchup.png" class="card-img-top img-fluid" alt="...">
+                  <div class="card-body d-flex align-items-center justify-content-center">
+                    <h6 class="mb-0">Book a Virtual 1:1 Coffee & Catch Up with LGfL</h6>
+                  </div>
+                </div>
+              </a>
+              <div class="coming-soon-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                <span class="text-white bg-dark px-3 py-1 rounded">Coming Soon</span>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <a href="https://landing.lgfl.net/training_support" class="text-decoration-none text-reset" target="_blank">
+              <div class="card shadow-sm h-100">
+                <img src="images/traininglrc.png" class="card-img-top img-fluid" alt="...">
+                <div class="card-body d-flex align-items-center justify-content-center">
+                  <h6 class="mb-0">Request a Free Training Session From Your Learning Resource Consultant</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="https://training.lgfl.net" class="text-decoration-none text-reset" target="_blank">
+              <div class="card shadow-sm h-100">
+                <img src="images/freetraining.png" class="card-img-top img-fluid" alt="...">
+                <div class="card-body d-flex align-items-center justify-content-center">
+                  <h6 class="mb-0">Explore LGfL CPD and Training</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="https://content.lgfl.net" class="text-decoration-none text-reset" target="_blank">
+              <div class="card shadow-sm h-100">
+                <img src="images/learningresources.png" class="card-img-top img-fluid" alt="...">
+                <div class="card-body d-flex align-items-center justify-content-center">
+                  <h6 class="mb-0">Explore Our Free Open Access Learning Resources</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="https://lgfl.net/home/latest-newsletters" class="text-decoration-none text-reset" target="_blank">
+              <div class="card shadow-sm h-100">
+                <img src="images/newsletters.png" class="card-img-top img-fluid" alt="...">
+                <div class="card-body d-flex align-items-center justify-content-center">
+                  <h6 class="mb-0">Sign Up to LGfL Newsletters</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="https://lgfl.net/Roadmap" class="text-decoration-none text-reset" target="_blank">
+              <div class="card shadow-sm h-100">
+                <img src="images/productupdates.png" class="card-img-top img-fluid" alt="...">
+                <div class="card-body d-flex align-items-center justify-content-center">
+                  <h6 class="mb-0">View LGfL Product Updates & Roadmaps</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="https://pps.lgfl.org.uk" class="text-decoration-none text-reset" target="_blank">
+              <div class="card shadow-sm h-100">
+                <img src="images/fsmchecker.png" class="card-img-top img-fluid" alt="...">
+                <div class="card-body d-flex align-items-center justify-content-center">
+                  <h6 class="mb-0">View LGfL FSM Checker</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col order-first order-lg-last mb-lg-0 mb-4" id="status">
+        <h5 class="d-none d-lg-block">Guides & Tips</h5>
+        <div class="accordion mb-3" id="accordion">
+          <div class="accordion-item rounded-0">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed d-flex p-2 p-lg-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" fill="#484848" class="bi bi-patch-question-fill ms-3" viewBox="0 0 16 16">
+                  <path d="M5.933.87a2.89 2.89 0 0 1 4.134 0l.622.638.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01zM7.002 11a1 1 0 1 0 2 0 1 1 0 0 0-2 0m1.602-2.027c.04-.534.198-.815.846-1.26.674-.475 1.05-1.09 1.05-1.986 0-1.325-.92-2.227-2.262-2.227-1.02 0-1.792.492-2.1 1.29A1.7 1.7 0 0 0 6 5.48c0 .393.203.64.545.64.272 0 .455-.147.564-.51.158-.592.525-.915 1.074-.915.61 0 1.03.446 1.03 1.084 0 .563-.208.885-.822 1.325-.619.433-.926.914-.926 1.64v.111c0 .428.208.745.585.745.336 0 .504-.24.554-.627"/>
+                </svg>
+                <div class="text-center w-100" style="font-weight: 500;">
+                <span>View User Guides</span> <span class="d-lg-none">& Top Tips</span>
+              </div>
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse " data-bs-parent="#accordion">
+              <div class="accordion-body">
+                <h5 class="fw-light text-center">Step-by-Step Help<span class="d-lg-none"> & Advice</span></h5>
+                <p class="mb-2 fw-light">For assistance with configuration changes on this website, please refer to the Support Site User Guide.</p>
+                <div class="list-group list-group-item-dark mb-3">
+                  <a href="secure/guide/WebGuide/Help.html" class="list-group-item list-group-item-action text-center">
+                    View Support Site User Guide
+                  </a>
+                </div>
+                <p class="mb-2 fw-light">LGfL is currently developing its own knowledge base, which you can explore below.</p>
+                <div class="list-group list-group-item-dark">
+                  <a href="https://helpdesk.lgfl.net/support/home" target="_blank" class="list-group-item list-group-item-action text-center">
+                    Visit LGfL Knowledge Base
+                  </a>
+                </div>
+                <img src="images/Help.webp" class="mt-2 d-none d-lg-block" alt="Concierge Image" style="width: 30%; height: auto; display: block; margin: auto; opacity: 50%;">
+                <div class="d-lg-none">
+                <p class="fw-light mb-2 mt-3">Here you'll find links to top tips and other advice from LGfL, covering key areas that will help keep your school safe and save your school money.</p>
+                <div class="list-group list-group-item-dark">
+                  <a href="https://lgfl.net" target="_blank" class="list-group-item list-group-item-action text-center">Filtering Top Tips</a>
+                  <a href="https://lgfl.net" target="_blank" class="list-group-item list-group-item-action text-center">Firewall Top Tips</a>
+                  <a href="https://lgfl.net" target="_blank" class="list-group-item list-group-item-action text-center">Monitoring Top Tips</a>  
+                  <a href="https://lgfl.net" target="_blank" class="list-group-item list-group-item-action text-center">Security Top Tips</a>
+                  <a href="https://lgfl.net" target="_blank" class="list-group-item list-group-item-action text-center">USO Account Management Top Tips</a>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item rounded-0 d-none d-lg-block">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed d-flex p-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" fill="#484848" class="bi bi-lightbulb-fill ms-3" viewBox="0 0 16 16">
+                  <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6m3 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1-.5-.5"/>
+                </svg>              
+                <span class="text-center w-100" style="font-weight: 500;">Discover Top Tips</span>
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordion">
+              <div class="accordion-body">
+                <h5 class="fw-light text-center">Quick Advice & Best Practices</h5>
+                <p class="fw-light mb-2">Here you'll find links to top tips and other advice from LGfL, covering key areas that will help keep your school safe and save your school money.</p>
+                <div class="list-group list-group-item-dark">
+                  <a href="https://lgfl.net" target="_blank" class="list-group-item list-group-item-action text-center">Filtering Top Tips</a>
+                  <a href="https://lgfl.net" target="_blank" class="list-group-item list-group-item-action text-center">Firewall Top Tips</a>
+                  <a href="https://lgfl.net" target="_blank" class="list-group-item list-group-item-action text-center">Monitoring Top Tips</a>
+                  <a href="https://lgfl.net" target="_blank" class="list-group-item list-group-item-action text-center">Security Top Tips</a>
+                  <a href="https://lgfl.net" target="_blank" class="list-group-item list-group-item-action text-center">USO Account Management Top Tips</a>
+                </div>
+                <img src="images/concierge.webp" class="mt-2" alt="Concierge Image" style="width: 30%; height: auto; display: block; margin: auto; opacity: 50%;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <h5>Status</h5>
+        <div class="container-xl" id="statuscards">
+          <div class="row justify-content-center">
+            <div class="py-3 py-sm-4 col-12 card d-flex" style="background-color: #fafafa;">
+              <div class="col-12 d-flex flex-column align-items-center lh-sm">
+                <h6 class="d-block mb-0">London Grid for Learning (998-0000) Site B</h6>
+                <button class="btn btn-sm btn-dark d-md-none mt-2" type="button" data-bs-toggle="offcanvas"
+                  data-bs-target="#filterOffcanvas" style="margin-left:0.75rem">
+                  Change Establishment
+                </button>
+              </div>
+            </div>
+            <div class="py-2 py-sm-3 col-12 col-sm-6 col-md-6 col-lg-12 card">
+              <div class="row align-items-center">
+                <div class="col-12 col-lg-3 d-flex justify-content-center mb-1 mb-sm-2 mb-lg-0">
+                  <img src="images/announce.png" alt="Icon" class="img-fluid" style="max-height: 40px;">
+                </div>
+                <div class="col-12 col-lg-9 lh-sm">
+                  <span class="d-block"><strong>Open Announcements:</strong> 2</span>
+                  <a href="/secure/support/support_issues.aspx" target="_blank" class="link-dark">View Announcements</a>
+                </div>
+              </div>
+            </div>
+            <div class="py-2 py-sm-3 col-12 col-sm-6 col-md-6 col-lg-12 card">
+              <div class="row align-items-center">
+                <div class="col-12 col-lg-3 d-flex justify-content-center mb-1 mb-sm-2 mb-lg-0">
+                  <img src="images/opencases.png" alt="Icon" class="img-fluid" style="max-height: 40px;">
+                </div>
+                <div class="col-12 col-lg-9 lh-sm">
+                  <span class="d-block"><strong>Open Support Cases:</strong> 3</span>
+                  <a href="/secure/support/support_issues.aspx" target="_blank" class="link-dark">View Cases</a>
+                </div>
+              </div>
+            </div>
+            <div class="py-2 py-sm-3 col-12 col-sm-6 col-md-6 col-lg-12 card">
+              <div class="row align-items-center">
+                <div class="col-12 col-lg-3 d-flex justify-content-center mb-1 mb-sm-2 mb-lg-0">
+                  <img src="images/connection.png" alt="Icon" class="img-fluid" style="max-height: 40px;">
+                </div>
+                <div class="col-12 col-lg-9 lh-sm">
+                  <span class="d-block"><strong>Connection:</strong> Up</span>
+                  <span class="d-block"><strong>Speed:</strong> 300Mbps</span>
+                  <a href="/secure/status/usage/status_trend.aspx" target="_blank" class="link-dark">Check Bandwidth Usage</a><br>
+                  <a href="https://lgfl.net/smartbuy/bandwidthboost" target="_blank" class="link-dark">Request Bandwidth Boost</a>
+                </div>
+              </div>
+            </div>
+            <div class="py-2 py-sm-3 col-12 col-sm-6 col-md-6 col-lg-12 card">
+              <div class="row align-items-center">
+                <div class="col-12 col-lg-3 d-flex justify-content-center mb-1 mb-sm-2 mb-lg-0">
+                  <img src="images/equipinfo.png" alt="Icon" class="img-fluid" style="max-height: 40px;">
+                </div>
+                <div class="col-12 col-lg-9 lh-sm">
+                  <span class="d-block"><strong>Firewall Model:</strong> Cisco FTD 1120</span>
+                  <span class="d-block"><strong>Router Model:</strong> Cisco ISR 4431</span>
+                  <span class="d-block"><strong>Public IP:</strong> 5.150.103.170</span>
+                  <a href="/secure/myacc/lgfl/lgfl2_deploy.aspx?tab=5" class="link-dark">View Connection Information</a>
+                </div>
+              </div>
+            </div>
+            <div class="py-2 py-sm-3  col-12 col-sm-6 col-md-6 col-lg-12 card">
+              <div class="row align-items-center">
+                <div class="col-12 col-lg-3 d-flex justify-content-center mb-1 mb-sm-2 mb-lg-0">
+                  <img src="images/fsm.png" alt="Icon" class="img-fluid" style="max-height: 40px;">
+                </div>
+                <div class="col-12 col-lg-9 lh-sm">
+                  <span class="d-block"><strong>Using Free LGfL FSM Checker:</strong> Yes</span>
+                  <a href="https://fsm.lgfl.net" target="_blank" class="link-dark">Request Access</a>
+                </div>
+              </div>
+            </div>
+            <div class="py-2 py-sm-3  col-12 col-sm-6 col-md-6 col-lg-12 card">
+              <div class="row align-items-center">
+                <div class="col-12 col-lg-3 d-flex justify-content-center mb-1 mb-sm-2 mb-lg-0">
+                  <img src="images/uso.png" alt="Icon" class="img-fluid" style="max-height: 40px;">
+                </div>
+                <div class="col-12 col-lg-9 lh-sm">
+                  <span class="d-block"><strong>Total USO Accounts:</strong> 650</span>
+                  <span class="d-block"><strong>Non MIS USO Accounts:</strong> 7</span>
+                  <a href="/secure/user/nc/user_report.aspx?rtype=23" class="link-dark">Review USO Accounts</a>
+                </div>
+              </div>
+            </div>
+            <div class="py-2 py-sm-3 col-12 col-sm-6 col-md-6 col-lg-12 card">
+              <div class="row align-items-center">
+                <div class="col-12 col-lg-3 d-flex justify-content-center mb-1 mb-sm-2 mb-lg-0">
+                  <img src="images/autoupdate.png" alt="Icon" class="img-fluid" style="max-height: 40px;">
+                </div>
+                <div class="col-12 col-lg-9 lh-sm">
+                  <span class="d-block"><strong>MIS:</strong> Arbor</span>
+                  <span class="d-block"><strong>Last MIS-USO Sync:</strong> 21/11/24 13:10</span>
+                  <span class="d-block"><strong>Last Change Processed:</strong> 14/11/24 23:42</span>
+                  <span class="d-block"><strong>Unmatched USO Accounts:</strong> 25</span>
+                  <a href="/secure/user/au/au_settings.aspx" class="link-dark">Manage AutoUpdate</a>
+                </div>
+              </div>
+            </div>
+            <div class="py-2 py-sm-3 col-12 col-sm-6 col-md-6 col-lg-12 card">
+              <div class="row align-items-center">
+                <div class="col-12 col-lg-3 d-flex justify-content-center mb-1 mb-sm-2 mb-lg-0">
+                  <img src="images/usosync.png" alt="Icon" class="img-fluid" style="max-height: 40px;">
+                </div>
+                <div class="col-12 col-lg-9 lh-sm">
+                  <span class="d-block"><strong>Last USO Sync to Google:</strong> 10/09/24 10:20</span>
+                  <span class="d-block"><strong>Last USO Sync to Microsoft:</strong> 10/01/24 18:15</span>
+                  <a href="https://helpdesk.lgfl.net/support/solutions/articles/54000014618" target="_blank" class="link-dark">View Sync Information</a>
+                </div>
+              </div>
+            </div>
+            <div class="py-2 py-sm-3  col-12 col-sm-6 col-md-6 col-lg-12 card">
+              <div class="row align-items-center">
+                <div class="col-12 col-lg-3 d-flex justify-content-center mb-1 mb-sm-2 mb-lg-0">
+                  <img src="images/remoteaccess.png" alt="Icon" class="img-fluid" style="max-height: 40px;">
+                </div> 
+                <div class="col-12 col-lg-9 lh-sm">
+                  <span class="d-block"><strong>Total Remote Access Users:</strong> 53</span>
+                  <span class="d-block"><strong>Users Not at Your School:</strong> 7</span>
+                  <a href="/secure/user/nc/user_report.aspx?rtype=24" class="link-dark">Review Remote Access</a>
+                </div>
+              </div>
+            </div>
+            <div class="py-2 py-sm-3  col-12 col-sm-6 col-md-6 col-lg-12 card">
+              <div class="row align-items-center">
+                <div class="col-12 col-lg-3 d-flex justify-content-center mb-1 mb-sm-2 mb-lg-0">
+                  <img src="images/staffmailusers.png" alt="Icon" class="img-fluid" style="max-height: 40px;">
+                </div>
+                <div class="col-12 col-lg-9 lh-sm">
+                  <span class="d-block"><strong>StaffMail Users:</strong> 123</span>
+                  <span class="d-block"><strong>Inactive Flagged for Deletion:</strong> 7</span>
+                  <a href="/secure/email/lgfl/inactive.aspx" class="link-dark">Review Inactive Mailboxes</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<div class="d-flex justify-content-center mx-2 my-3">
+  <div class="card">
+    <div style="background-color: rgb(213, 44, 44);" class="text-white text-center py-2 px-3 rounded d-none d-lg-block">
+        <p class="mb-0 fw-bold">
+          LGfL SUPERCLOUD – Fast, Safe <span class="fw-semibold">and</span> Secure <span class="fw-semibold">Broadband & Cloud Services that Deliver Outstanding</span> Value for Money!
+        </p>
+    </div>
+    <div style="background-color: rgb(213, 44, 44);" class="text-white text-center py-3 px-3 rounded d-block d-lg-none ">
+      <p class="mb-0 fw-bold d-block d-lg-none lh-sm">
+        LGfL SUPERCLOUD<br> Fast, Safe <span class="fw-semibold">and</span> Secure <span class="fw-semibold">Broadband & Cloud Services that Deliver Outstanding</span> Value for Money!
+      </p>
+  </div>
+  </div>
+</div>
+
+
+
+  <div style="border-top:1px solid black; margin:6px auto; padding-top:2px;">
+    <center>
+      <table cellpadding="1" cellspacing="6" border="0">
+        <tbody>
+          <tr>
+            <td align="left" valign="middle">
+              <span id="ctl00_lblOperatedBy1"
+                style="font-family:Verdana;font-size:10pt;font-weight:bold;font-style:italic;">This support site is provided by </span> 
+              </td>
+            <td align="left" valign="middle">
+              <a id="ctl00_hypAtom" href="https://www.wavenet.co.uk/education"
+                style="display:inline-block;height:19px;width:75px;"><img
+                  src="images/wavenet-education-150x38.png" alt=""
+                  style="height:19px;width:75px;border-width:0px;"></a>
+            </td>
+            <td align="left" valign="middle">
+              <span id="ctl00_lblOperatedBy2"
+                style="font-family:Verdana;font-size:10pt;font-weight:bold;font-style:italic;"> to LGfL</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </center>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
